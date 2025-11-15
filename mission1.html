@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 1 - Rapport KDou</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navigation-laterale">
+    <h2>Rapport KDou</h2>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission1.html" class="active">Mission 1 :</a></li>
+        <li><a href="mission2.html">Mission 2 :</a></li>
+        <li><a href="mission3.html">Mission 3 :</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+</nav>
+
+<main class="contenu-principal">
+
+    <header>
+        <h1>Mission 1 : Étude et Analyse des Données</h1>
+        <p>Conception et interrogation d'une base de données.</p>
+    </header>
+
+    <section id="bilan-m1">
+        <h2>Introduction</h2>
+        <p>KDou est une entreprise spécialisée dans la vente de produits alimentaires d’épicerie fine et de spécialités du monde. Ses fournisseurs sont internationaux, tandis que sa clientèle se situe entièrement en France. Malgré un chiffre d’affaires satisfaisant, l’entreprise s’interroge aujourd’hui sur sa rentabilité et sur la manière de mieux se positionner face à la concurrence.</p>
+
+        <h3>Contexte</h3>
+        <p>Soucieuse d’adopter une démarche plus éco-responsable tout en améliorant sa performance économique, KDou souhaite explorer de nouveaux leviers, comme la commercialisation de produits plus respectueux de l’environnement ou l’optimisation de son organisation. Notre équipe est donc sollicitée pour analyser son fonctionnement et proposer des solutions permettant de renforcer son image d’entreprise « eco-friendly ».</p>
+        <h3>Exploration des données</h3>
+        <p>Pour répondre aux besoins de l'entreprise, nous avons d'abord procédé à la définition des clés primaires et des clés étrangères pour chacune des tables comme les exemples ci-dessous :</p>
+        <img src="images/4.png" alt="Tableu" class="sql-image">
+        <p>Nous avons ensuite manipulé les tables à l'aide de différentes fonctions présentes dans Excel, comme la fonction RECHERCHEX, qui permet de lier les informations d'une table à une autre. Nous avons également utilisé les filtres (Données -> Filtrer). <br>Par la suite, nous avons pu répondre aux différentes questions et déterminer le nombre de clients parisiens, de Bisontins, les produits commandés par les clients, ainsi que les produits vendus par les fournisseurs.</p>
+    </section>
+
+    <section id="conclusion-m1">
+        <h2>Analyse des données et identification des incohérences</h2>
+        <p>L’étude des bases de données de KDou met en évidence plusieurs problèmes de qualité : variations d’écriture pour les pays et les villes, fautes d’orthographe, formats de téléphone non uniformes, e-mails très similaires entre clients, ainsi qu’un doublon de clé primaire dans la table fournisseurs. Ces incohérences peuvent expliquer certaines réclamations, comme les commandes manquantes signalées par Maria Larson ou les difficultés de communication mentionnées par Marc Randon.</p>
+        <h3>Propositions d’amélioration</h3>
+        <p>Pour fiabiliser les données, il est recommandé de mettre en place des règles de validation (format des e-mails, numéros de téléphone, uniformisation des adresses), de structurer les champs d’adresse, et d’effectuer des contrôles réguliers afin de détecter les doublons. L’ajout d’un statut de suivi des commandes permettrait également d’éviter les pertes d’informations et d’améliorer la traçabilité.</p>
+    </section>
+
+    <footer>
+        <p>SAE 1.04-CREATION D'UNE BASE DE DONNEES & R1.02 Dev. Interface Web</p>
+        <p>IUT de Paris - Rives de Seine | Université Paris Cité</p>
+    </footer>
+</main>
+
+</body>
+</html>

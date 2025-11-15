@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 2 - Rapport KDou</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navigation-laterale">
+    <h2>Rapport KDou</h2>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission1.html">Mission 1 :</a></li>
+        <li><a href="mission2.html" class="active">Mission 2 :</a></li>
+        <li><a href="mission3.html">Mission 3 :</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+</nav>
+
+<main class="contenu-principal">
+
+    <header>
+        <h1>Mission 2 : Exploitation via Interface Low-Code</h1>
+        <p>Exploitation de la BDD KDou (Access QBE).</p>
+    </header>
+
+    <section id="indicateurs-m2">
+        <h3>Contexte</h3>
+        <p>L’objectif de cette mission est d’entamer l’exploitation de la base de données de l’entreprise KDou afin de préparer la production d’analyses et d’indicateurs fiables. Pour cela, nous allons utiliser le logiciel Low Code Access afin de réaliser différentes requêtes et commencer à structurer les informations de manière plus exploitable.</p>
+        <h2>Indicateurs Réalisés</h2>
+
+        <article class="indicateur">
+            <h3>Indicateur 1 :</h3>
+            <p><strong>Énoncé et interprétation :</strong><br>
+                On veut vérifier les coordonnées des clients parisiens : en donner une liste triée par
+                société.</p>
+
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Code client</th>
+                    <th>Société</th>
+                    <th>Contact</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ALYAD</td>
+                    <td>Chez Bouxou</td>
+                    <td>Alyssa Duranta</td>
+                    <td>Paris</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>FAMIA</td>
+                    <td>ChefFamilla</td>
+                    <td>Aria Cruz</td>
+                    <td>Paris</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>MALEF</td>
+                    <td>La Parisienne</td>
+                    <td>Marie Lefevre</td>
+                    <td>Paris</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>GOUMA</td>
+                    <td>Le Gourmet</td>
+                    <td>Marc Randon</td>
+                    <td>Paris</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>FISSA</td>
+                    <td>Une petite faim</td>
+                    <td>Diego Roel</td>
+                    <td>paris</td>
+                    <td>France</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/1.1.png" alt="Code SQL de la requête Clients parisiens" class="sql-image">
+        </article>
+
+        <article class="indicateur">
+            <h3>Indicateur 2 : </h3>
+            <p><strong>Énoncé et interprétation :</strong><br>
+                Quels sont clients qui n’ont pas encore passé de commandes (Code, société et mail) ? </p>
+
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Code client</th>
+                    <th>Société</th>
+                    <th>MailCli</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>DEAGE</td>
+                    <td>Délices d'Agen</td>
+                    <td>delicesdag@hotmail.</td>
+                </tr>
+                <tr>
+                    <td>MAIPA</td>
+                    <td>La Maison dans le Parc</td>
+                    <td>lamaisonchev@orang</td>
+                </tr>
+                <tr>
+                    <td>MACHO</td>
+                    <td>La maison Chou</td>
+                    <td>lamaisonch@orange.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/2.1.png" alt="Code SQL des clients sans commande" class="sql-image">
+        </article>
+
+        <article class="indicateur">
+            <h3>Indicateur 3 :</h3>
+            <p><strong>Énoncé et interprétation :</strong><br>
+                Quels fournisseurs proposent de la viande et du poisson ? </p>
+
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Contact</th>
+                    <th>Pays</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Hug Jhonson</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Ian Devling</td>
+                    <td>Australie</td>
+                </tr>
+                <tr>
+                    <td>Hug Jhonson</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Lars Peterson</td>
+                    <td>Suède</td>
+                </tr>
+                <tr>
+                    <td>Marie Nodier</td>
+                    <td>France</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/3.png" alt="Code SQL des fournisseurs sans produits" class="sql-image">
+        </article>
+
+    </section>
+
+    <footer>
+        <p>SAE 1.04-CREATION D'UNE BASE DE DONNEES & R1.02 Dev. Interface Web</p>
+        <p>IUT de Paris - Rives de Seine | Université Paris Cité</p>
+    </footer>
+</main>
+
+</body>
+</html>

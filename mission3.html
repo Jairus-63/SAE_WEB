@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 3 - Rapport KDou</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="navigation-laterale">
+    <h2>Rapport KDou</h2>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mission1.html">Mission 1 :</a></li>
+        <li><a href="mission2.html">Mission 2 :</a></li>
+        <li><a href="mission3.html" class="active">Mission 3 :</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+</nav>
+
+<main class="contenu-principal">
+
+    <header>
+        <h1>Mission 3 : Analyse SQL de la Nouvelle BDD</h1>
+        <p>Analyse des données de KDou (nouvelle version) avec le langage SQL.</p>
+    </header>
+
+    <section id="contexte-m3">
+        <h2>Contexte de la Mission</h2>
+        <p>L'entreprise KDou a fait évoluer sa base de données. Cette mission consiste à exploiter cette nouvelle version, qui inclut :</p>
+        <ul>
+            <li>Des partenariats entre clients.</li>
+            <li>Une gestion des pays fournisseurs via une table dédiée.</li>
+            <li>Un calcul de prix de vente basé sur le coût d'achat et un coefficient de marge.</li>
+        </ul>
+
+        <h3>Schéma des relations</h3>
+        <img src="images/5.png" alt="Schéma des relations de la BDD KDou" class="schema-bdd">
+    </section>
+
+    <section id="requetes-obligatoires">
+        <h2>I. Requêtes Obligatoires</h2>
+
+        <h3>Requête 1 : Chiffre d'Affaires "Santé"</h3>
+        <blockquote>
+            "KDou s’intéresse aux desserts et aux boissons dans sa réflexion en lien avec la santé. On veut le chiffre d'affaires généré (montant total des ventes de KDou) par les catégories desserts ou boissons par année."
+        </blockquote>
+        <h4>Code SQL (Image) :</h4>
+        <img src="images/6.png" alt="Code SQL de la requête CA Santé" class="sql-image">
+        <h4>Résultat :</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Annee</th>
+                <th>CodeCateg</th>
+                <th>RevenuParAn</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2020</td>
+                <td>1</td>
+                <td>48851,1042038343</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>3</td>
+                <td>35970,6594978035</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>1</td>
+                <td>392805,507335398</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>3</td>
+                <td>320871,332319104</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>1</td>
+                <td>175</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>3</td>
+                <td>698,9876545621</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>Requête 2 : Produits Carnés Non Commandés</h3>
+        <blockquote>
+            " KDou se demande ce qu’il faut changer dans son offre, voici un indicateur à
+            calculer :
+            Le nombre de produits carnés non commandés actuellement ?"
+        </blockquote>
+        <h4>Code SQL (Image) :</h4>
+        <img src="images/7.png" alt="Code SQL de la requête Produits Carnés" class="sql-image">
+        <h4>Résultat :</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>NbProduitsCarnesNonCommandes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+        <h3>Requête 3 : Chiffre d'Affaires Fournisseurs Hors UE</h3>
+        <blockquote>
+            "Quel CA total a été généré à ce jour avec ces fournisseurs hors UE?"
+        </blockquote>
+        <h4>Code SQL (Image) :</h4>
+        <img src="images/8.png" alt="Code SQL de la requête CA Hors UE" class="sql-image">
+        <h4>Résultat :</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>CATotalHorsUE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2208860,07778221</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h3>Requête 4 : Comparaison Pilotes / Partenaires</h3>
+        <blockquote>
+            " KDou étudie le partenariat client :
+            Y a t-il des clients pilotes d’un réseau partenaire ayant autant de
+            commandes que les clients partenaires ? "
+        </blockquote>
+        <h4>Code SQL (image):</h4>
+        <img src="images/13.png" alt="Code SQL " class="sql-image">
+        <h4>Résultat :</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Client</th>
+                <th>CodeCliPart</th>
+                <th>Partenaire</th>
+                <th>NbCommandesClient</th>
+                <th>NbCommandesPartenaire</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Isabelle Tricote</td>
+                <td>NOSGK</td>
+                <td>Gus Kerba</td>
+                <td>17</td>
+                <td>17</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="requetes-perso">
+        <h2>II. Indicateurs Proposés par l'Équipe</h2>
+
+        <article class="indicateur">
+            <h3>Indicateur 1 : Top 5 des produits les plus rentables</h3>
+            <p><strong>Proposé par :</strong>COLADILLA Rolf</p>
+            <p><strong>Objectif :</strong>L'objectif est d'identifier les produits les plus rentables pour l'entreprise. Cela permet de savoir quels produits contribuent le plus aux bénéfices réels, au-delà du simple chiffre d'affaires.</p>
+            <p><strong>Intérêt :</strong>Cette requête est intéressante car elle se concentre sur la rentabilité et non sur le volume des ventes. Un produit peut générer un grand chiffre d'affaires (CA) mais avoir une marge très faible, et donc être peu profitable. En calculant la marge totale (en se basant sur le CoutAchat et le CoefMarge pour trouver le prix de vente ), KDou peut identifier les produits qui financent réellement son activité. L'entreprise peut alors décider de mettre ces produits en avant dans ses actions marketing ou d'optimiser les coûts de ceux qui sont moins rentables.</p>
+
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/9.png" alt="Code SQL de la requête Top 5 Rentable" class="sql-image">
+
+            <h4>Résultat (Exemple) :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Nom Produit</th>
+                    <th>MargeTotale</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Côte de Blaye</td>
+                    <td>241448,343607911</td>
+                </tr>
+                <tr>
+                    <td>Manjimup Dried Apples</td>
+                    <td>126444,499867568</td>
+                </tr>
+                <tr>
+                    <td>Rhonbrau Klosterbier</td>
+                    <td>122712,042435317</td>
+                </tr>
+                <tr>
+                    <td>Gorgonzola Telino</td>
+                    <td>122326,549842728</td>
+                </tr>
+                <tr>
+                    <td>Camembert Pierrot</td>
+                    <td>121287,10335542</td>
+                </tr>
+                </tbody>
+            </table>
+            <h3>Explication de sa conception</h3>
+            <p>Pour trouver les produits les plus rentables, il a d'abord fallu rassembler toutes les données nécessaires en joignant trois tables. Nous avons lié Produit (pour le nom et le coût d'achat) à Categorie (pour récupérer le coefficient de marge) et à DetailCommande (pour la quantité vendue et la remise).
+                <br>Ensuite, nous avons calculé la marge totale pour chaque vente en appliquant la formule de bénéfice (Prix de Vente - Coût d'Achat) * Quantité * (1 - Remise).
+                <br>Enfin, la fonction SUM a additionné tous ces bénéfices individuels pour chaque produit. L'instruction GROUP BY a permis de regrouper ces sommes par nom de produit, puis ORDER BY les a triées pour afficher les plus rentables en premier, et TOP 5 n'a gardé que les cinq meilleurs résultats.</p>
+        </article>
+
+        <article class="indicateur">
+            <h3>Indicateur 2 : Lien avec la santé : Desserts/Boissons</h3>
+            <p><strong>Proposé par :</strong>KAWKA Maxim</p>
+            <p><strong>Objectif :</strong> Identifier les produits "plaisir" (potentiellement moins sains) qui sont les plus populaires en volume. Cela permet à KDou de savoir exactement quels produits cibler s'ils souhaitent rééquilibrer leur offre "santé".</p>
+            <p><strong>Intérêt :</strong> Plutôt que de regarder le chiffre d'affaires global de ces catégories, cette requête identifie les produits spécifiques qui animent les ventes. Connaître ce top 3 permet à KDou de prendre des décisions ciblées : soit en proposant des alternatives plus saines à ces produits populaires, soit en décidant de réduire leur promotion pour s'aligner sur une nouvelle stratégie axée sur la santé.</p>
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/10.png" alt="Code SQL de la requête personnelle " class="sql-image">
+
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Nom Produit</th>
+                    <th>NomCateg</th>
+                    <th>TotalVendu</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Guaraná Fantástica</td>
+                    <td>Boissons</td>
+                    <td>1575</td>
+                </tr>
+                <tr>
+                    <td>Rhonbrau</td>
+                    <td>Klosterbier</td>
+                    <td>1558</td>
+                </tr>
+                <tr>
+                    <td>Pavlova</td>
+                    <td>Desserts</td>
+                    <td>1355</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Explication de sa conception</h3>
+            <p>Pour créer cet indicateur, il faut d'abord lier les tables Produit, Categorie, et DetailCommande pour associer les noms des produits à leurs catégories et aux quantités vendues.
+                <br>Ensuite, nous filtrons ces résultats avec une clause WHERE pour ne conserver que les lignes où le nom de la catégorie est "Boissons" ou "Desserts".
+                <br>La fonction SUM est utilisée pour additionner toutes les quantités vendues pour chaque produit. L'instruction GROUP BY regroupe ces sommes par nom de produit, puis ORDER BY les classe par ordre décroissant pour voir les plus vendus en premier. Finalement, TOP 3 ne conserve que les trois premiers produits de cette liste.</p>
+        </article>
+
+        <article class="indicateur">
+            <h3>Indicateur 3: Provenance des produits</h3>
+            <p><strong>Proposé par :</strong>ELOUADI Marwan</p>
+            <p><strong>Objectif :</strong> Obtenir une vue d'ensemble de la répartition géographique de l'approvisionnement. Cela permet d'identifier les dépendances vis-à-vis de certains pays et de mesurer l'effort "local" (ex: produits venant de France) dans le cadre d'une problématique environnementale</p>
+            <p><strong>Intérêt :</strong> Cette requête donne une vision claire de la diversité de la chaîne d'approvisionnement de KDou. Si un grand nombre de produits provient d'un pays lointain (hors UE par exemple ), cela peut indiquer un risque en termes de coûts de transport et un impact carbone élevé. À l'inverse, connaître le nombre de produits sourcés en France permettrait à KDou de valoriser une offre "locale" ou "circuit-court", répondant ainsi aux préoccupations environnementales.</p>
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/11.png" alt="Code SQL de la requête personnelle " class="sql-image">
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Pays Fournisseur</th>
+                    <th>NbProduitsDistincts</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Royaume-Uni</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Etats-Unis</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>Allemagne</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>France</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Japon</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+                <h3>Explication de sa conception</h3>
+            <p>Pour réaliser cet indicateur, nous devons connecter trois tables : Produit, Fournisseur et Pays. La jointure se fait en reliant Produit à Fournisseur via le numéro de fournisseur (NoFour), puis Fournisseur à Pays via le numéro de pays (NoPays).
+                Une fois les tables liées, nous utilisons la fonction COUNT sur la référence produit (RefProd) pour compter combien de produits sont associés à chaque pays.
+                L'instruction GROUP BY est essentielle pour regrouper ces comptages par le nom français du pays (PaysFR). Enfin, ORDER BY trie le résultat pour afficher en premier les pays qui fournissent le plus de produits différents à KDou.</p>
+        </article>
+
+        <article class="indicateur">
+            <h3>Indicateur 4: Étude clientèle ou partenariat</h3>
+            <p><strong>Proposé par :</strong>LERHZAL Ilyies</p>
+            <p><strong>Objectif :</strong> Identifier les réseaux de partenaires (clients pilotes ) qui génèrent le plus de valeur, pour savoir quels partenariats KDou devrait renforcer ou récompenser.</p>
+            <p><strong>Intérêt :</strong> Cette requête analyse la performance financière des partenariats clients. Plutôt que de comparer des nombres de commandes, elle calcule le chiffre d'affaires total généré par tous les clients "partenaires" et les regroupe sous leur "client pilote". Cela permet à KDou d'identifier les réseaux les plus rentables et de mesurer concrètement l'efficacité de sa stratégie de livraisons groupées.</p>
+            <h4>Code SQL (Image) :</h4>
+            <img src="images/12.png" alt="Code SQL de la requête personnelle " class="sql-image">
+            <h4>Résultat :</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Societe</th>
+                    <th>CA_Reseau</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Chez Bouxou</td>
+                    <td>394626,202548188</td>
+                </tr>
+                <tr>
+                    <td>Le Nostradamu</td>
+                    <td>357468,236512049</td>
+                </tr>
+                <tr>
+                    <td>Crêperie de la gare</td>
+                    <td>257973,374511559</td>
+                </tr>
+                <tr>
+                    <td>Bistro gare</td>
+                    <td>100331,110326319</td>
+                </tr>
+                <tr>
+                    <td>Table nantaise</td>
+                    <td>56161,6502319221</td>
+                </tr>
+                </tbody>
+            </table>
+            <h3>Explication de sa conception</h3>
+            <p>Cette requête est la plus complexe car elle nécessite de lier la table Clientele à elle-même (une auto-jointure) pour modéliser le réseau. Clientele AS Pilote représente le client pilote, et Clientele AS Partenaire représente les clients de son réseau, liés par le champ CodeCliPart.
+                Une fois ce lien réseau établi, nous joignons les clients "Partenaire" à leurs Commande, puis aux DetailCommande, puis à Produit et Categorie pour accéder aux données de vente.
+                Nous calculons le chiffre d'affaires pour chaque ligne de commande en utilisant la formule PrixVente * Quantité * (1 - Remise). La fonction SUM additionne ce CA, et GROUP BY le regroupe par le nom de la société du "Client Pilote", ce qui nous donne la valeur totale de chaque réseau.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>SAE 1.04-CREATION D'UNE BASE DE DONNEES & R1.02 Dev. Interface Web</p>
+        <p>IUT de Paris - Rives de Seine | Université Paris Cité</p>
+    </footer>
+</main>
+
+</body>
+</html>
