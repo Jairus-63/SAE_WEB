@@ -1,0 +1,174 @@
+
+:root {
+    --couleur-principale: #004a99; /* Bleu foncé IUT */
+    --couleur-secondaire: #f0f8ff; /* Bleu très clair */
+    --couleur-fond: #ffffff;
+    --couleur-texte: #333333;
+    --largeur-nav: 220px; /* Largeur de la navigation */
+}
+
+/* --- Structure Générale --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    display: flex;
+}
+
+/* --- Navigation Latérale Fixe --- */
+.navigation-laterale {
+    width: var(--largeur-nav);
+    position: fixed;
+    height: 100vh;
+    background-color: var(--couleur-principale);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.navigation-laterale h2 {
+    color: var(--couleur-fond);
+    text-align: center;
+    border-bottom: 2px solid var(--couleur-secondaire);
+    padding-bottom: 10px;
+}
+
+.navigation-laterale ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-laterale li a {
+    display: block;
+    color: var(--couleur-fond);
+    text-decoration: none;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-laterale li a:hover,
+.navigation-laterale li a.active {
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+/* --- Contenu Principal (main) --- */
+.contenu-principal {
+    margin-left: var(--largeur-nav);
+    padding: 30px 40px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    max-width: calc(100% - var(--largeur-nav));
+}
+
+header {
+    border-bottom: 3px solid var(--couleur-principale);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    color: var(--couleur-principale);
+    margin: 0;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* --- Pied de Page --- */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+
+/* Blocs de code (si vous en gardez) */
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--couleur-principale);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.95em;
+}
+code {
+    font-family: "Consolas", "Monaco", monospace;
+}
+
+/* Tableaux (restent inchangés) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-principale);
+}
+
+/* Images */
+img.schema-bdd {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+img.sql-image {
+    width: 100%; /
+    max-width: 800px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+/* Listes */
+ul.equipe-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .navigation-laterale {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .contenu-principal {
+        margin-left: 0;
+        padding: 20px;
+        max-width: 100%;
+    }
+}
